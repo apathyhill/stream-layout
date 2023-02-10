@@ -1,0 +1,143 @@
+:root {
+    --main-color: gray;
+    --border-color: #ffffff;
+    --text-color: black;
+    --background-color: #1f1f1f;
+    --font: sans-serif;
+    
+    --width: 1920px;
+    --height: 1080px;
+    --line-height: 30px;
+
+    --border-width: 5px;
+
+    --label-padding: calc(var(--line-height) * 0.25);
+
+    --screen-width: 1440px;
+    --screen-height: 810px;
+
+    --info-width: 480px;
+    --info-box-width: 400px;
+    --info-padding: calc((var(--info-width) - var(--info-box-width)) * 0.5);
+
+    --viewer-ratio: 0.75;
+    --viewer-visible: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    width: var(--width);
+    height: var(--height);
+    overflow: hidden;
+}
+
+.box {
+    border: var(--border-width) var(--border-color) solid;
+    box-shadow: 0 0 5px black;
+}
+
+#screen.box {
+    position: absolute;
+    top: 540px;
+    left: 1200px;
+    width: var(--screen-width);
+    height: var(--screen-height);
+
+    transform: translate(-50%, -50%);
+}
+
+#label-screen {
+    opacity: 0;
+}
+
+.widget {
+    display: inline;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--info-padding) - (2 * var(--border-width)));
+    width: var(--info-width);
+    height: 100%;
+
+    box-sizing: border-box;
+    padding: calc(var(--info-padding) - var(--border-width)) 0;
+}
+
+.box.info {
+    position: relative;
+    width: var(--info-box-width);
+
+    background-color: var(--background-color);
+}
+
+.box .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.box .label.banner {
+    width: 100%;
+    height: var(--line-height);
+
+    background-color: var(--main-color);
+}
+
+.box .label p::before {
+    float: left;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: var(--line-height);
+
+    box-sizing: border-box;
+    padding: 0 var(--label-padding);
+
+    color: var(--text-color);
+    background-color: var(--border-color);
+
+    box-sizing: border-box;
+
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: calc(var(--line-height) * 0.75);
+    font-variant: small-caps;
+    line-height: var(--line-height);
+    vertical-align: middle;
+    text-align: center;
+
+    content: var(--label-text);
+}
+
+.box .label p::after {
+    display: inline-block;
+    z-index: 1;
+    top: 0;
+    width: 0;
+    height: 0;
+
+    border-right: var(--line-height) solid transparent;
+    border-top: var(--line-height) solid var(--border-color);
+
+    content: "";
+}
+
+#viewer.box {
+    background-color: transparent;
+    opacity: var(--viewer-visible);
+}
