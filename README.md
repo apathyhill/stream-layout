@@ -1,17 +1,15 @@
 # stream-layout
-
 A customizable website containing common stream information for use in OBS.
 
 ## Usage
-
 In a browser source, use these URLs:  
 [Info URL](info.html)  
 [Screen URL](screen.html)  
 
 ## Customization
+Using Custom CSS, certain variables can be changed with the following syntax:
 
 ### Global
-These following variables can be changed by using Custom CSS with the following syntax:
 ```css
 :root {
     --main-color: color; /* The color used for label banners. */
@@ -22,8 +20,8 @@ These following variables can be changed by using Custom CSS with the following 
     --border-width: 5px; /* The thickness of the borders around boxes. */
 }
 ```
+
 ### Info
-For the info source, the following variables can be changed:
 ```css
 :root {
     --label-visible: 1; /* The visiblity of labels. */
@@ -36,7 +34,6 @@ For the info source, the following variables can be changed:
 ```
 
 ### Screen
-For the screen source, the following variables can be changed:
 ```css
 :root {
     --screen-width: 1440px; /* The width of the screen box. */
