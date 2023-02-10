@@ -41,5 +41,14 @@ Using Custom CSS, certain variables can be changed with the following syntax:
 }
 ```
 
+## Common Values
+### Screen Resolutions
+* `--screen-width: 1440px; --screen-height: 810px;` (16:9)
+* `--screen-width: 1440px; --screen-height: 1080px;` (4:3)
+* `--screen-width: 1024px; --screen-height: 896px;` (8:7 / NES / SNES)
+* `--screen-width: 1120px; --screen-height: 1008px;` (10:9 / Game Boy)
+* `--screen-width: 1440px; --screen-height: 960px;` (3:2 / Game Boy Advance)
+* `--screen-width: 1440px; --screen-height: 864px;` (5:3 / 3DS)
+
 ## To Do
 * Make Streamlabs widgets work natively in layout.
